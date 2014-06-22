@@ -1,0 +1,23 @@
+{
+  "name": "checkins",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Peter Johnson <wiz@wiz.co.nz>",
+  "description": "A travel map",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "~3.5.0",
+    "passport": "~0.2.0",
+    "jade": "~1.3.0",
+    "passport-twitter": "^1.0.2",
+    "passport-facebook": "^1.0.3",
+    "passport-foursquare": "^1.0.0",
+    "request": "^2.34.0",
+    "twitter": "^0.2.9",
+    "breakdown": "0.0.12"
+  }
+}
