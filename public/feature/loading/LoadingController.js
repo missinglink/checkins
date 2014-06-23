@@ -31,9 +31,11 @@ app.controller( 'LoadingController', function( $scope, $rootScope, $location, Fo
     });
   }
 
-  var pageSize = 100;
+  var pageSize = 100; 
   $scope.loadCheckins = function( cb ){
-    for( var x=0; x<Math.ceil( $scope.totalCheckins / pageSize ); x++ ){
+    $scope.totalPages = Math.ceil( $scope.totalCheckins / pageSize );
+    $scope.loadedPages = 0;
+    for( var x=0; x<$scope.totalPages; x++ ){
       Foursquare.Users.get({
         userId: 'self',
         action: 'checkins',
@@ -49,8 +51,9 @@ app.controller( 'LoadingController', function( $scope, $rootScope, $location, Fo
   }
 
   $scope.checkDone = function(){
-    $scope.loadedCheckins = Object.keys( $rootScope.checkins ).length;
-    if( $scope.loadedCheckins === $scope.totalCheckins ){
+    $scope.loadedPages++;
+    $scope.loadedCheckins = Object.keys( $rootScope.checkins ).length; //update ui
+    if( $scope.loadedPages >= $scope.totalPages ){
       $location.path( "/map" );
     }
   }
