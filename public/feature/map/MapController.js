@@ -63,6 +63,8 @@ app.controller( 'MapController', function( $scope, $rootScope, $location ) {
 
       var checkin = $rootScope.checkins[ id ];
       // console.log( 'add to map!', checkin );
+
+      if( !checkin.venue ) continue;
       
       var html = "";
       var config = {

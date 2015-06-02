@@ -14,4 +14,4 @@ app.configure(function() {
   app.get( '/', function( req, res ){ res.render( 'index' ); });
 });
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(6000);
